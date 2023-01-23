@@ -1,15 +1,17 @@
 import propTypes from "prop-types";
 
-const InputLogin = ({ label, type, value, handleChange }) => {
+const InputLogin = ({ style, label, type, value, dataLogin }) => {
   return (
     <form className="container-input">
-      <label htmlFor={label}>{label}</label>
+      <label htmlFor={label} style={{ color: style }}>
+        {label}
+      </label>
       <input
         type={type}
         name={label}
         className="input-user"
         value={value}
-        onChange={(e) => (handleChange ? handleChange(e) : "")}
+        onChange={(e) => (dataLogin ? dataLogin(e) : "")}
       />
     </form>
   );
